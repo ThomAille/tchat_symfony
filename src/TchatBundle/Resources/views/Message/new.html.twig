@@ -1,0 +1,6 @@
+<form method="POST" action="{{ path('message_new', {'room_id': room_id }) }}" class="ui reply form">
+    <div class="field">
+        {{ form_widget(form.message) }}
+    </div>
+    {{ form_widget(form.envoyer)}}
+{{ form_end(form) }}

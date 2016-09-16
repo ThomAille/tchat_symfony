@@ -1,0 +1,9 @@
+<div class="item">
+    <div class="header">Rooms ({{ rooms|length }})</div>
+    <div class="menu">
+            <a class="item" href="{{ path('room_new') }}">Create room</a>
+        {% for room in rooms %}
+            <a class="item" href="{{ path('room_show', { 'id': room.id }) }}">{{ room.name }}</a>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,6 @@
+services:
+    tchat.activity_listener:
+        class: TchatBundle\Listener\ActivityListener
+        arguments: ['@security.token_storage', '@doctrine.orm.entity_manager']
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onCoreController }

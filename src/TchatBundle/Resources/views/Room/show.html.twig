@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="ui comments">
+        <h3 class="ui dividing header">{{ room.name }}</h3>
+        {% for message in room.messages %}
+        <div class="comment">
+            <div class="content">
+                <a class="author">{{ message.user.username }}</a>
+                <div class="metadata">
+                    <span class="date">{{ message.createdDate|date('Y-m-d') }}</span>
+                </div>
+                <div class="text">{{ message.message }}</div>
+            </div>
+        </div>
+        {% endfor %}
+        {{ render(controller('TchatBundle:Message:new', {'room_id': room.id })) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+<div class="item">
+    <div class="header">Utilisateurs en ligne ({{ users|length }})</div>
+    <div class="menu">
+        {% for user in users %}
+            <span class="item">{{ user.username|e }}</span>
+        {% endfor %}
+    </div>
+</div>
